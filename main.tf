@@ -16,7 +16,7 @@ resource "aws_docdb_cluster" "docdb" {
 #  master_password      = jsondecode(data.aws_secretsmanager_secret_version.roboshop.secret_string)["DOCDB_PASS"]
   skip_final_snapshot  = true
   db_subnet_group_name = "${var.env}-${var.name}-roboshop-docdb"
-  vpc_security_group_ids = [aws_]
+#  vpc_security_group_ids = [aws_security_groups.sg.id]
 }
 
 
