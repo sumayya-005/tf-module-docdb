@@ -7,4 +7,3 @@ variable "env" {}
 #variable "vpc_id" {}
 #variable "BASTION_NODE" {}
 #variable "vpc_cidr" {}
-#variable "PROMETHEUS_NODE" {}
