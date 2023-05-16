@@ -6,6 +6,5 @@ variable "env" {}
 #variable "skip_final_snapshot" {}
 #variable "vpc_id" {}
 #variable "BASTION_NODE" {}
-#variable "app_port_no" {}
 #variable "vpc_cidr" {}
 #variable "PROMETHEUS_NODE" {}

@@ -3,30 +3,15 @@
 #  description = "${var.env}-${var.name}-docdb.sg"
 #  vpc_id      = var.vpc_id
 #
-#  ingress {
-#    description      = "SSH"
-#    from_port        = 22
-#    to_port          = 22
-#    protocol         = "tcp"
-#    cidr_blocks      = [var.BASTION_NODE]
-#  }
-#
+
 #    ingress {
-#      description      = "APP"
-#      from_port        = var.app_port_no
-#      to_port          = var.app_port_no
+#      description      = "MONGODB"
+#      from_port        = 27071
+#      to_port          = 27071
 #      protocol         = "tcp"
-#      cidr_blocks      = [var.vpc_cidr]
+#      cidr_blocks      = [var.vpc_cidr,var.BASTION_NODE]
 #    }
-#
-#  ingress {
-#    description      = "PROMETHEUS"
-#    from_port        = 9100
-#    to_port          = 9100
-#    protocol         = "tcp"
-#    cidr_blocks      = [var.PROMETHEUS_NODE]
-#  }
-#
+
 #  egress  {
 #    from_port        = 0
 #    to_port          = 0
