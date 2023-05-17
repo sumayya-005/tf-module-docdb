@@ -9,9 +9,11 @@ cd /tmp
 unzip mongodb.zip
 cd mongodb-main
 curl -L -O https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
-mongo --ssl --host dev-db1-roboshop-docdb.cluster-cjjzk2q3bnco.us-east-1.docdb.amazonaws.com:27017 --sslCAFile
- rds-combined-ca-bundle.pem --username admin1 --password <insertYourPassword>
+mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint}:27017 --sslCAFilerds-combined-ca-bundle.pem --username ${local.DOCDB_USER}
+ --password ${local.DOCDB_PASS} < catalogue.js
 
+mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint}:27017 --sslCAFilerds-combined-ca-bundle.pem --username ${local.DOCDB_USER}
+--password ${local.DOCDB_PASS} < user.js
 EOF
   }
 }
