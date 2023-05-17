@@ -4,6 +4,6 @@ variable "name" {}
 variable "env" {}
 variable "nodes" {}
 variable "skip_final_snapshot" {}
-#variable "vpc_id" {}
-#variable "BASTION_NODE" {}
-#variable "vpc_cidr" {}
+variable "vpc_id" {}
+variable "BASTION_NODE" {}
+variable "vpc_cidr" {}
