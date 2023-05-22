@@ -12,13 +12,13 @@ resource "aws_docdb_cluster" "docdb" {
   depends_on           = [aws_docdb_subnet_group.default]
   cluster_identifier   = "${var.env}-${var.name}-roboshop-docdb"
   engine               = var.engine
-  master_username     = "foo"
-  master_password     = "cjnsdfnjn"
-#  master_username      = local.DOCDB_USER
-#  master_password      = local.DOCDB_PASS
+#  master_username     = "foo"
+#  master_password     = "cjnsdfnjn"
+  master_username      = local.DOCDB_USER
+  master_password      = local.DOCDB_PASS
   skip_final_snapshot   = var.skip_final_snapshot
   db_subnet_group_name = "${var.env}-${var.name}-roboshop-docdb"
-#  vpc_security_group_ids = [aws_security_group.sg.id]
+  vpc_security_group_ids = [aws_security_group.sg.id]
 }
 
 
